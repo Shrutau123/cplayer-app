@@ -1,0 +1,58 @@
+eureka:
+  instance:
+    hostname: localhost
+server:
+  port: 8888
+spring:
+  application:
+    name: API-GATEWAY
+  cloud:
+    gateway:
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Origin Access-Control-Allow-Credentials, RETAIN_UNIQUE
+      globalcors:
+          cors-configurations: 
+            '[/**]':
+              allowed-origins: "*"
+              allowed-methods: "*"
+              allowed-headers: "*"
+#              allow-credentials: true
+      routes:
+      - id: user-auth
+        uri: lb://USER-AUTH
+        predicates:
+        - Path=/api/auth/**
+      
+ 
+      - id: user-service
+        uri:
+          lb://USER-SERVICE
+        predicates:
+        - Path=/api/user/**
+        
+        
+      - id: external-api
+        uri: 
+          https://api.cricapi.com
+        predicates :
+          - Path=/v1/**
+         
+      - id: recommended-service
+        uri:
+          lb://RECOMMENDED-SERVICE
+        predicates:
+        - Path=/api/recom/**
+            
+      - id: favourite-service
+        uri:
+          lb://FAVOURITE-SERVICE
+        predicates:
+        - Path=/api/fav/**
+        
+        
+      
+      
+
+
+
+    

@@ -1,0 +1,82 @@
+<!-- Sign Up form -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Rubik+Moonrocks&family=Splash&display=swap" rel="stylesheet">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+<mat-toolbar color="primary">
+   <mat-toolbar-row>
+     
+     <div class="heading"><a href="">CRICKET APP</a> </div>
+     <div class="top">
+       <a mat-button href="login">Login </a>
+       <a mat-button routerLink="signup">Signup </a>
+       
+       
+     </div>
+     
+     
+   </mat-toolbar-row>
+ </mat-toolbar>
+<div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+   <strong>Successfully Registered!</strong> You can now login to your account.
+   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+     <span aria-hidden="true">&times;</span>
+   </button>
+ </div>
+
+ <div class="bg-img" >
+
+<div class="signup">Sign Up Form</div>
+<form [formGroup]="loginForm" (ngSubmit)="signIn()">
+   <div>
+      <label for="email">Email</label>
+      <input class="email" type="email" placeholder="  Enter email" formControlName="email"><br>
+      <small class="err" *ngIf="email.invalid && (email.dirty || email.touched)">
+         Email is mandatory field
+      </small>
+   </div>
+   <div>
+      <label for="password">Password</label>
+      <input class="password" type="password" placeholder="  Enter password" formControlName="password"><br>
+      <small *ngIf="password.invalid && (password.dirty || password.touched)">
+         <small class="err" *ngIf="password.errors.required">
+            Password cannot be left blank
+         </small>
+         <small class="err" *ngIf="password.errors.minlength">
+            Password must have minimum 8 characters
+         </small>
+      </small>
+   </div>
+   <div>
+      <label for="name">Name</label>
+      <input class="name" type="text" placeholder="  Enter your name" formControlName="name"><br>
+      <small class="err" *ngIf="name.invalid && (name.dirty || name.touched)">
+         Name is mandatory field
+      </small>
+   </div>
+   <div>
+      <label for="mobile">Mobile</label>
+      <input class="mobile" type="text" placeholder="  Enter your mobile" formControlName="mobile"><br>
+      <small class="err" *ngIf="mobile.invalid && (mobile.dirty || mobile.touched)">
+         Enter a valid 10 digit Mobile Number
+      </small>
+   </div>
+
+   <div class="image-upload-container btn btn-bwm">
+      <label>Image</label>
+      <input #imageInput class="image" type="file" (change)="onFileChanged($event)">
+   </div>
+
+   <div class="but">
+      <button [disabled]="!loginForm.valid" value="sign Up">Sign Up</button>
+      <!--input class="submit"[disabled} = "!loginForm.valid" value="signIn"-->
+      <button (click)="tologin()" value="log In">Already Registered</button>
+   </div>
+</form>
+ </div>
+
+<app-footer></app-footer>

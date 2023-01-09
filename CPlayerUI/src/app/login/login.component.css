@@ -1,0 +1,137 @@
+form{
+    border: 1px solid rgb(20, 106, 235);
+    background-color: white;
+    margin:auto;
+    margin-top: 30px;
+    width:40vw;
+    display: flex;
+    flex-direction: column;
+    filter: saturate();
+    color: transparent;
+    opacity: 0.8;
+    
+} 
+
+form div {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+form div input{
+    width: 80%;
+    background-color: grey(56, 61, 61);
+    border-width: 1px;
+    border-color: rgba(57, 73, 121, 0.534);
+    color: rgb(0, 0, 0);
+    margin: 1vh auto;
+    height: 28px;
+}
+
+form div button{
+    width : 35%;
+    background-color: rgba(6, 3, 22, 0.692);
+    border-width: 1px;
+    border-color: rgba(0, 0, 0, 0.466);
+    color: rgb(255, 255, 255);
+    height: 30px;
+    font-size: 15px;
+    margin: 2vh auto;
+}
+
+.but{
+    display: flexbox
+}
+
+small{
+    color: red;
+    font-style: italic;
+    margin-left: 5%;
+}
+.esmall{
+    margin-left: 10%;
+}
+label{
+    color: black;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left:  10%;;
+}
+
+.login{
+    color: rgb(0, 0, 0);
+    font-size: 30px;
+    text-align: center;
+    margin-top: 0%;
+    position: relative;
+    padding: 20px;
+    margin-bottom: 3%;
+}
+.heading{
+    font-size: xx-large;
+    margin-right: 24%;
+    margin-left: 1%;
+    color: #40a97b;
+    color: inherit;
+    font-family: 'Lobster', cursive;
+  }
+  a {
+    color: inherit; /* blue colors for links too */
+    text-decoration: inherit; /* no underline */
+  } 
+  .top{
+    position: absolute;
+    right: 120px;
+    font-size: larger;
+  }
+  .side{
+    margin: 20px 10px;
+  }
+  .logo{
+    height: 30px;
+  }
+  .dropdown {
+    position: absolute;
+    right: 48px;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute; 
+    background-color: #f9f9f9;
+    min-width: 80px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  }
+  
+  .dropdown:hover .dropdown-content {
+    z-index: 2;
+    display: block;
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.644);
+  }
+
+  .bg-img {
+    /* The image used */
+    background-image: url("/assets/ground.jpg");
+  
+    /* Control the height of the image */
+    /* min-height: 380px; */
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    width: 100%;
+        
+        max-width: 1520px;
+        max-height: 650px;  
+        /* background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent); */
+        height: 650px;
+        position: relative;
+        top: 0px;
+        /* filter: brightness(50%); */
+  }
+ 

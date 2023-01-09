@@ -1,0 +1,10 @@
+server:
+  port: 8003
+
+spring:
+  application:
+    name: RECOMMENDED-SERVICE
+    
+eureka:
+  instance:
+    hostname: localhost

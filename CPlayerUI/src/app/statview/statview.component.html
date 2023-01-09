@@ -1,0 +1,192 @@
+<!-- Used to display stats of a particular player -->
+
+<div class="" style="text-align:center">
+   <img height="200px" src={{stat.playerImg}}>
+   <h1><b>{{stat.name}}</b> </h1>
+
+   <!-- <h3 class="age">{{stat.dateOfBirth[0]}}{{stat.dateOfBirth[1]}}{{stat.dateOfBirth[2]}}{{stat.dateOfBirth[3]}}</h3> -->
+</div>
+<div></div>
+<div class="">
+   <!-- <span style="flex: 1 1 auto;"></span> -->
+   <!-- <h1><b>{{stat.name}}</b> </h1> -->
+   <h3 class="age"> <b> Date of Birth :</b> {{(stat.dateOfBirth).slice(0,10)}}</h3>
+   <h3><b>Born :</b> {{stat.placeOfBirth}}</h3>
+   <h3><b>Country :</b> {{stat.country}}</h3>
+   <h3><b>Role :</b> {{stat.role}}</h3>
+   <h3><b>Batting Style :</b> {{stat.battingStyle}}</h3>
+   <h3><b>Bowling Style :</b> {{stat.bowlingStyle}}</h3>
+
+</div>
+
+<!-- 
+<table>
+   <tr>
+      <th>Batting</th>
+      <th>50's</th>
+      <th>100's</th>
+      <th>St </th>
+      <th>Ct </th>
+      <th>6's</th>
+      <th>4's</th>
+      <th>S.R.</th>
+      <th>BF</th>
+      <th>Average</th>
+      <th>Highest</th>
+      <th>Total Runs</th>
+      <th>Not-Out</th>
+      <th>Innings</th>
+      <th>Matches</th>
+   </tr>
+   <tr>
+      <td><b>List A</b></td>
+      <td>{{stat.data.batting.listA['50']}}</td>
+      <td>{{stat.data.batting.listA['100']}}</td>
+      <td>{{stat.data.batting.listA['St']}}</td>
+      <td>{{stat.data.batting.listA['Ct']}}</td>
+      <td>{{stat.data.batting.listA['6s']}}</td>
+      <td>{{stat.data.batting.listA['4s']}}</td>
+      <td>{{stat.data.batting.listA['SR']}}</td>
+      <td>{{stat.data.batting.listA['BF']}}</td>
+      <td>{{stat.data.batting.listA['Ave']}}</td>
+      <td>{{stat.data.batting.listA['HS']}}</td>
+      <td>{{stat.data.batting.listA['Runs']}}</td>
+      <td>{{stat.data.batting.listA['NO']}}</td>
+      <td>{{stat.data.batting.listA['Inns']}}</td>
+      <td>{{stat.data.batting.listA['Mat']}}</td>
+   </tr>
+   <tr>
+      <td><b>First Class</b></td>
+      <td>{{stat.data.batting.firstClass['50']}}</td>
+      <td>{{stat.data.batting.firstClass['100']}}</td>
+      <td>{{stat.data.batting.firstClass['St']}}</td>
+      <td>{{stat.data.batting.firstClass['Ct']}}</td>
+      <td>{{stat.data.batting.firstClass['6s']}}</td>
+      <td>{{stat.data.batting.firstClass['4s']}}</td>
+      <td>{{stat.data.batting.firstClass['SR']}}</td>
+      <td>{{stat.data.batting.firstClass['BF']}}</td>
+      <td>{{stat.data.batting.firstClass['Ave']}}</td>
+      <td>{{stat.data.batting.firstClass['HS']}}</td>
+      <td>{{stat.data.batting.firstClass['Runs']}}</td>
+      <td>{{stat.data.batting.firstClass['NO']}}</td>
+      <td>{{stat.data.batting.firstClass['Inns']}}</td>
+      <td>{{stat.data.batting.firstClass['Mat']}}</td>
+   </tr>
+   <tr>
+      <td><b>One Days</b></td>
+      <td>{{stat.data.batting.ODIs['50']}}</td>
+      <td>{{stat.data.batting.ODIs['100']}}</td>
+      <td>{{stat.data.batting.ODIs['St']}}</td>
+      <td>{{stat.data.batting.ODIs['Ct']}}</td>
+      <td>{{stat.data.batting.ODIs['6s']}}</td>
+      <td>{{stat.data.batting.ODIs['4s']}}</td>
+      <td>{{stat.data.batting.ODIs['SR']}}</td>
+      <td>{{stat.data.batting.ODIs['BF']}}</td>
+      <td>{{stat.data.batting.ODIs['Ave']}}</td>
+      <td>{{stat.data.batting.ODIs['HS']}}</td>
+      <td>{{stat.data.batting.ODIs['Runs']}}</td>
+      <td>{{stat.data.batting.ODIs['NO']}}</td>
+      <td>{{stat.data.batting.ODIs['Inns']}}</td>
+      <td>{{stat.data.batting.ODIs['Mat']}}</td>
+   </tr>
+   <tr>
+      <td><b>Tests</b></td>
+      <td>{{stat.data.batting.tests['50']}}</td>
+      <td>{{stat.data.batting.tests['100']}}</td>
+      <td>{{stat.data.batting.tests['St']}}</td>
+      <td>{{stat.data.batting.tests['Ct']}}</td>
+      <td>{{stat.data.batting.tests['6s']}}</td>
+      <td>{{stat.data.batting.tests['4s']}}</td>
+      <td>{{stat.data.batting.tests['SR']}}</td>
+      <td>{{stat.data.batting.tests['BF']}}</td>
+      <td>{{stat.data.batting.tests['Ave']}}</td>
+      <td>{{stat.data.batting.tests['HS']}}</td>
+      <td>{{stat.data.batting.tests['Runs']}}</td>
+      <td>{{stat.data.batting.tests['NO']}}</td>
+      <td>{{stat.data.batting.tests['Inns']}}</td>
+      <td>{{stat.data.batting.tests['Mat']}}</td>
+   </tr>
+</table>
+
+<table class="bowling">
+   <tr>
+      <th>Bowling</th>
+      <th>10 W</th>
+      <th>5 W</th>
+      <th>4 W </th>
+      <th>S.R. </th>
+      <th>Econ</th>
+      <th>Average</th>
+      <th>BBM</th>
+      <th>BBI</th>
+      <th>Wickets</th>
+      <th>Runs</th>
+      <th>Balls</th>
+      <th>Innings</th>
+      <th>Matches</th>
+   </tr>
+   <tr>
+      <td><b>List A</b></td>
+      <td>{{stat.data.bowling.listA['10']}}</td>
+      <td>{{stat.data.bowling.listA['5W']}}</td>
+      <td>{{stat.data.bowling.listA['4W']}}</td>
+      <td>{{stat.data.bowling.listA['SR']}}</td>
+      <td>{{stat.data.bowling.listA['Econ']}}</td>
+      <td>{{stat.data.bowling.listA['Ave']}}</td>
+      <td>{{stat.data.bowling.listA['BBM']}}</td>
+      <td>{{stat.data.bowling.listA['BBI']}}</td>
+      <td>{{stat.data.bowling.listA['Wkts']}}</td>
+      <td>{{stat.data.bowling.listA['Runs']}}</td>
+      <td>{{stat.data.batting.listA['Balls']}}</td>
+      <td>{{stat.data.batting.listA['Inns']}}</td>
+      <td>{{stat.data.batting.listA['Mat']}}</td>
+   </tr>
+   <tr>
+      <td><b>First Class</b></td>
+      <td>{{stat.data.bowling.firstClass['10']}}</td>
+      <td>{{stat.data.bowling.firstClass['5W']}}</td>
+      <td>{{stat.data.bowling.firstClass['4W']}}</td>
+      <td>{{stat.data.bowling.firstClass['SR']}}</td>
+      <td>{{stat.data.bowling.firstClass['Econ']}}</td>
+      <td>{{stat.data.bowling.firstClass['Ave']}}</td>
+      <td>{{stat.data.bowling.firstClass['BBM']}}</td>
+      <td>{{stat.data.bowling.firstClass['BBI']}}</td>
+      <td>{{stat.data.bowling.firstClass['Wkts']}}</td>
+      <td>{{stat.data.bowling.firstClass['Runs']}}</td>
+      <td>{{stat.data.batting.firstClass['Balls']}}</td>
+      <td>{{stat.data.batting.firstClass['Inns']}}</td>
+      <td>{{stat.data.batting.firstClass['Mat']}}</td>
+   </tr>
+   <tr>
+      <td><b>One Days</b></td>
+      <td>{{stat.data.bowling.ODIs['10']}}</td>
+      <td>{{stat.data.bowling.ODIs['5W']}}</td>
+      <td>{{stat.data.bowling.ODIs['4W']}}</td>
+      <td>{{stat.data.bowling.ODIs['SR']}}</td>
+      <td>{{stat.data.bowling.ODIs['Econ']}}</td>
+      <td>{{stat.data.bowling.ODIs['Ave']}}</td>
+      <td>{{stat.data.bowling.ODIs['BBM']}}</td>
+      <td>{{stat.data.bowling.ODIs['BBI']}}</td>
+      <td>{{stat.data.bowling.ODIs['Wkts']}}</td>
+      <td>{{stat.data.bowling.ODIs['Runs']}}</td>
+      <td>{{stat.data.batting.ODIs['Balls']}}</td>
+      <td>{{stat.data.batting.ODIs['Inns']}}</td>
+      <td>{{stat.data.batting.ODIs['Mat']}}</td>
+   </tr>
+   <tr>
+      <td><b>Tests</b></td>
+      <td>{{stat.data.bowling.tests['10']}}</td>
+      <td>{{stat.data.bowling.tests['5W']}}</td>
+      <td>{{stat.data.bowling.tests['4W']}}</td>
+      <td>{{stat.data.bowling.tests['SR']}}</td>
+      <td>{{stat.data.bowling.tests['Econ']}}</td>
+      <td>{{stat.data.bowling.tests['Ave']}}</td>
+      <td>{{stat.data.bowling.tests['BBM']}}</td>
+      <td>{{stat.data.bowling.tests['BBI']}}</td>
+      <td>{{stat.data.bowling.tests['Wkts']}}</td>
+      <td>{{stat.data.bowling.tests['Runs']}}</td>
+      <td>{{stat.data.batting.tests['Balls']}}</td>
+      <td>{{stat.data.batting.tests['Inns']}}</td>
+      <td>{{stat.data.batting.tests['Mat']}}</td>
+   </tr>
+</table>  -->

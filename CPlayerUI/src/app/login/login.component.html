@@ -1,0 +1,55 @@
+<!-- Login form -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Rubik+Moonrocks&family=Splash&display=swap" rel="stylesheet">
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+      
+      <div class="heading"><a routerLink="">CRICKET APP</a> </div>
+      <div class="top">
+        <a mat-button routerLink="login">Login </a>
+        <a mat-button href="signup">Signup </a>
+        
+        
+      </div>
+      
+      
+    </mat-toolbar-row>
+  </mat-toolbar>
+  
+  <div class="bg-img" >
+    <!-- <img src="/assets/ground.jpg" alt="Snow" style="width:100%"> -->
+    
+       
+
+<div class="login"> Login Form</div>
+<form [formGroup]="loginForm" (ngSubmit)="logIn()">
+    <div>
+        <label for="email">Email</label>
+        <input type="text" placeholder="Enter Email" formControlName="email">
+        <small class="esmall" *ngIf="email.invalid && (email.dirty || email.touched)">
+            email is mandatory field
+        </small>
+    </div>
+    <div>
+        <label for="password">Password</label>
+        <input type="password" placeholder="Enter Password" formControlName="password">
+        <small *ngIf="password.invalid && (password.dirty || password.touched)">
+            <small *ngIf="password.errors.required">
+                password cannot be left blank
+            </small>
+            <small *ngIf="password.errors.minlength">
+                password must have minimum 8characters
+            </small>
+        </small>
+    </div>
+
+    <div class="but">
+        <button [disabled]="!loginForm.valid" value="sign In">Log In</button>
+        <!--input class="submit"[disabled} = "!loginForm.valid" value="signIn"-->
+        <button (click)="tosignup()" value="signIn">New User</button>
+    </div>
+</form>
+</div>
+
+<app-footer></app-footer>
